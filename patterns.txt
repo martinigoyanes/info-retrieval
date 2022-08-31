@@ -1,0 +1,40 @@
+//
+//  Information retrieval course
+//  First version: Johan Boye 2016
+//
+// In this file you can put your regular expressions
+// for matching non-standard words (like mail addresses).
+//
+// As you have probably already understood, lines beginning
+// with "//" are comments.
+
+// email
+[a-zA-Z0-9._%+-]+@[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,6}
+
+// URL
+https?://host:[0-9]{1,5}\/([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)
+https?://(www.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+\.~#?&//=!,]*)
+
+// Twenty-four seven
+\d+/\d+
+
+// p.m. b.c.
+[a-zA-Z]\.[a-zA-Z]\.
+\d+([\.]\d+)+
+
+// contractions
+[a-zA-Z]+'[a-zA-Z]{1,2}$
+'[a-zA-Z]{1,3}$
+
+// hours xx:xx:yy
+\d{1,2}:\d{1,2}:\d{1,2}
+
+// number with + in front
+[\+$]\d+
+
+// words and numbers seperated with -,._
+[\w,-,]+\.(xlsx|ppt|doc|png|jpg|jpeg|pdf|html|py|java|class|txt)
+\w+([-,]\w+)*
+
+// ip direction
+\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
